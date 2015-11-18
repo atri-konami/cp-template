@@ -32,6 +32,6 @@ struct SegTree
         if ( r <= a || b <= l ) return INT_MAX;
         if ( a <= l && r <= b ) return dat[k];
 
-        return min(minimum(a,b,k*2+1,l,(l+r)/2), minimum(a,b,k*2+2,(l+r)/2,r));
+        return min(minimum(a,b,k*2+1,l,(l+r)/2), minimum(a,b,k*2+2,(l+r)/2,r)) + sum[k];
     }
 }
