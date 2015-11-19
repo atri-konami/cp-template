@@ -3,7 +3,7 @@
  * author : atri^konami
  * update : add-single
  * query : range-add
- * test : 
+ * test : AOJ DSL_2 Problem B - Range Sum Query
  */
 
 struct SegTree
