@@ -1,9 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define dump(x) (cerr << #x << "=" << x << endl)
 #define all(x) (x).begin(),(x).end()
 #define REP(i,a,b) for(int i=(int)(a); i<(int)(b); i++)
 #define rep(i,n) REP(i,0,n)
+#define erep(x,v) for(auto &x : (v))
 #define pb push_back
 
 typedef long long ll;
@@ -11,10 +13,7 @@ typedef pair<int,int> pii;
 typedef vector<int> vi;
 typedef vector<pii> vp;
 
-#define dump(x) (cerr << #x << "=" << x << endl)
-
-template<class T>
-ostream& operator<<(ostream& os,const vector<T> v) {
+template<class T> ostream& operator<<(ostream& os,const vector<T> v) {
     os << "[";
     for(int i=0; i<v.size(); i++){
         os << v[i] << ",";
@@ -23,8 +22,7 @@ ostream& operator<<(ostream& os,const vector<T> v) {
     return os;
 }
 
-template<class T1,class T2>
-ostream& operator<<(ostream& os, const pair<T1,T2> p) {
+template<class T1,class T2> ostream& operator<<(ostream& os, const pair<T1,T2> p) {
         os << "(" << p.first << "," << p.second << ")"; return os;
 }
 
@@ -40,5 +38,4 @@ int main(){
     dump(x);
     cout << p << endl;
     cout << v << endl;
-    dump(p);
 }
