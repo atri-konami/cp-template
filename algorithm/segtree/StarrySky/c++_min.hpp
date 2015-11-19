@@ -1,3 +1,11 @@
+/*
+ * Starry Sky(ver.min)
+ * update : add-range
+ * query : range-min
+ * author : atri_konami
+ * test: none
+ */
+
 struct SegTree
 {
     int N;
@@ -18,8 +26,8 @@ struct SegTree
         if ( r <= a || b <= l ) return dat[k];
         if ( a <= l && r <= b )
         {
-            sum[k] += k;
-            return dat[k] += k;
+            sum[k] += x;
+            return dat[k] += x;
         }
 
         return dat[k] = min(add(a,b,x,k*2+1,l,(l+r)/2),add(a,b,x,k*2+2,(l+r)/2,r)) + sum[k];
@@ -34,4 +42,4 @@ struct SegTree
 
         return min(minimum(a,b,k*2+1,l,(l+r)/2), minimum(a,b,k*2+2,(l+r)/2,r)) + sum[k];
     }
-}
+};
