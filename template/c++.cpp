@@ -18,7 +18,7 @@ typedef vector<pii> vp;
 #define dump(x) (cerr << #x << "=" << x << endl)
 
 template<class T>
-ostream& operator<<(ostream& os,const vector<T> v) {
+ostream& operator<<(ostream& os,const vector<T>& v) {
     os << "[";
     for(int i=0; i<v.size(); i++) os << v[i] << ",";
     os << "]";
@@ -26,7 +26,7 @@ ostream& operator<<(ostream& os,const vector<T> v) {
 }
 
 template<class T1,class T2>
-ostream& operator<<(ostream& os, const pair<T1,T2> p) {
+ostream& operator<<(ostream& os, const pair<T1,T2>& p) {
         os << "(" << p.first << "," << p.second << ")"; return os;
 }
 
