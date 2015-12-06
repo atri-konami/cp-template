@@ -1,7 +1,10 @@
-// more : http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B&lang=jp
-
-#include <bits/stdc++.h>
-using namespace std;
+/*
+ * Range Sum Query(ver.SegTree.rangeadd)
+ * author : atri-konami
+ * update : range-add
+ * query : range-sum
+ * test : 
+ */
 
 struct SegTree
 {
@@ -37,30 +40,6 @@ struct SegTree
         if ( r <= a || b <= l ) return 0;
         if ( a <= l && r <= b ) return dat[k];
 
-        return sum(a,b,k*2+1,l,(l+r)/2) + sum(a,b,k*2+2,(l+r)/2,r) + lazy[k] * (r-l);
+        return sum(a,b,k*2+1,l,(l+r)/2) + sum(a,b,k*2+1,(l+r)/2,r) + lazy[k] * (r-l);
     }
 };
-
-
-int main()
-{
-    int N,Q;
-    cin >> N >> Q;
-
-    SegTree seg(N);
-
-    for(int i=0; i<Q; i++)
-    {
-        int c,x,y;
-        cin >> c >> x >> y;
-
-        if(c)
-        {
-            cout << seg.sum(x-1,y) << endl;
-        }
-        else
-        {
-            seg.add(x-1,x,y);
-        }
-    }
-}
