@@ -2,6 +2,8 @@
 using namespace std;
 
 struct UnionFind{
+    vector<int> par,rank;
+
     UnionFind(int n){
         par.resize(n);
         rank.resize(n);
@@ -35,9 +37,6 @@ struct UnionFind{
         return root(x) == root(y);
     }
 
-private:
-    vector<int> par,rank;
-
     int root(int x)
     {
         if (x == par[x]) return x;
@@ -45,6 +44,7 @@ private:
         return par[x] = root(par[x]);
     }
 };
+
 
 int main() {
     int N,Q;
@@ -57,7 +57,7 @@ int main() {
         cin >> p >> a >> b;
 
         if(p) {
-            cout << (u.same(a,b) ? "Yes" : "No") << endl;
+            cout << (u.same(a,b) ? 1 : 0) << endl;
         }else{
             u.unite(a,b);
         }

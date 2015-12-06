@@ -1,4 +1,6 @@
 struct UnionFind{
+    vector<int> par,rank;
+
     UnionFind(int n){
         par.resize(n);
         rank.resize(n);
@@ -31,9 +33,6 @@ struct UnionFind{
     {
         return root(x) == root(y);
     }
-
-private:
-    vector<int> par,rank;
 
     int root(int x)
     {
