@@ -16,31 +16,32 @@ typedef vector<int> vi;
 typedef vector<pii> vp;
 
 #define dump(x) (cerr << #x << "=" << x << endl)
-
-template<class T>
-ostream& operator<<(ostream& os,const vector<T>& v) {
-    os << "[";
-    for(int i=0; i<v.size(); i++) os << v[i] << ",";
-    os << "]";
-    return os;
-}
-
+template<class T> ostream& osContainer(ostream& os,T c) { os<<'[';for(decltype(c.begin()) it=c.begin();it!=c.end();it++)os<<*it<<',';os<<']';return os; }
+template<class T> ostream& operator<<(ostream& os,const vector<T>& v) { return osContainer(os,v); }
+template<class T> ostream& operator<<(ostream& os,const set<T>& s) { return osContainer(os,s); }
+template<class T> ostream& operator<<(ostream& os,const multiset<T>& s) { return osContainer(os,s); }
+template<class T,class S> ostream& operator<<(ostream& os,const map<T,S>& m) { return osContainer(os,m); }
+template<class T,class S> ostream& operator<<(ostream& os,const multimap<T,S>& m) { return osContainer(os,m); }
 template<class T1,class T2>
-ostream& operator<<(ostream& os, const pair<T1,T2>& p) {
-        os << "(" << p.first << "," << p.second << ")"; return os;
-}
+ostream& operator<<(ostream& os, const pair<T1,T2>& p){ os << '(' << p.first << ',' << p.second << ')'; return os; }
 
 int main(){
     cin.tie(0);
     ios::sync_with_stdio(false);
 
     vector<int> v;
+    set<int> s;
+    map<int,string> m;
     v.pb(1);v.pb(2);v.pb(4);v.pb(8);
-    pair<int,int> p = make_pair(INT_MAX,INT_MIN);
+    s.insert(1);s.insert(100);s.insert(10);
+    m.insert(mp(1,"tarou"));m.insert(mp(6,"jirou"));m.insert(mp(2,"gorou"));
+    pair<int,int> p = mp(INT_MAX,INT_MIN);
     int x = 1;
 
     dump(x);
     cout << p << endl;
     cout << v << endl;
+    cout << s << endl;
+    cout << m << endl;
     dump(p);
 }
