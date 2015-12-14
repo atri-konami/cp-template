@@ -16,7 +16,7 @@ typedef vector<int> vi;
 typedef vector<pii> vp;
 
 #define dump(x) (cerr << #x << "=" << x << endl)
-template<class T> ostream& osContainer(ostream& os,T c) { os<<'[';for(decltype(c.begin()) it=c.begin();it!=c.end();it++)os<<*it<<',';os<<']';return os; }
+template<class T> ostream& osContainer(ostream& os,T c) { os<<'[';for(typename T::iterator it=c.begin();it!=c.end();it++)os<<*it<<',';os<<']';return os; }
 template<class T> ostream& operator<<(ostream& os,const vector<T>& v) { return osContainer(os,v); }
 template<class T> ostream& operator<<(ostream& os,const set<T>& s) { return osContainer(os,s); }
 template<class T> ostream& operator<<(ostream& os,const multiset<T>& s) { return osContainer(os,s); }
