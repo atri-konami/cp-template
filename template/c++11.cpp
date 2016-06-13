@@ -34,6 +34,8 @@ const int dy[] = {1,0,-1,0};
 int main(){
     cin.tie(0);
     ios::sync_with_stdio(false);
+    cout.setf(ios::fixed);
+    cout.precision(12);
 
     vector<int> v;
     set<int> s;

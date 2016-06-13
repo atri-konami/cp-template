@@ -34,20 +34,6 @@ const int dy[] = {1,0,-1,0};
 int main(){
     cin.tie(0);
     ios::sync_with_stdio(false);
-
-    vector<int> v;
-    set<int> s;
-    map<int,string> m;
-    v.pb(1);v.pb(2);v.pb(4);v.pb(8);
-    s.insert(1);s.insert(100);s.insert(10);
-    m.insert(mp(1,"tarou"));m.insert(mp(6,"jirou"));m.insert(mp(2,"gorou"));
-    pair<int,int> p = mp(INT_MAX,INT_MIN);
-    int x = 1;
-
-    dump(x);
-    cout << p << endl;
-    cout << v << endl;
-    cout << s << endl;
-    cout << m << endl;
-    dump(p);
+    cout.setf(ios::fixed);
+    cout.precision(12);
 }
