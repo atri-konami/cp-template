@@ -28,6 +28,8 @@ ostream& operator<<(ostream& os, const pair<T1,T2>& p){ os << '(' << p.first << 
 int main(){
     cin.tie(0);
     ios::sync_with_stdio(false);
+    cout.setf(ios::fixed);
+    cout.precision(12);
 
     vector<int> v;
     set<int> s;
